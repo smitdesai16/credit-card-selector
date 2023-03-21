@@ -1,6 +1,7 @@
 import { BankOfAmericaCreditCard, BankOfAmericaPreferredRewards } from "./DataLayer/BankOfAmericaCreditCard";
 import { CitiCreditCard } from "./DataLayer/CitiCreditCard";
 import { DiscoverCreditCard } from "./DataLayer/Discover";
+import { TJMaxCreditCard } from "./DataLayer/TJMaxCreditCard";
 import { ICreditCardBenefit } from "./Model/ICreditCardBenefit";
 
 export const getCreditCardBenefits = (): ICreditCardBenefit[] => {
@@ -8,10 +9,12 @@ export const getCreditCardBenefits = (): ICreditCardBenefit[] => {
 	const boa = new BankOfAmericaCreditCard(BankOfAmericaPreferredRewards.Platinum);
 	const citi = new CitiCreditCard();
 	const discover = new DiscoverCreditCard();
+	const tjMax = new TJMaxCreditCard();
 	
 	creditCards = creditCards.concat(boa.getCreditCardBenefits());
 	creditCards = creditCards.concat(citi.getCreditCardBenefits());
 	creditCards = creditCards.concat(discover.getCreditCardBenefits());
+	creditCards = creditCards.concat(tjMax.getCreditCardBenefits());
 	
 	let dictionaryStorage = new Map();
 
