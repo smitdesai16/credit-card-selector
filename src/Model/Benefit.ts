@@ -9,7 +9,7 @@ export enum Benefit {
 	GroceryStore,
 	WholesaleClubs,
 	Other,
-	Costo,
+	Costco,
 	StreamingServices,
 	TJMax,
 	Marshalls,
