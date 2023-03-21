@@ -1,0 +1,19 @@
+export enum Benefit {
+	Online,
+	Gas,
+	Dining,
+	Restaurants,
+	DrugStore,
+	HomeImprovementAndFurniture,
+	Travel,
+	GroceryStore,
+	WholesaleClubs,
+	Other,
+	Costo,
+	StreamingServices,
+	TJMax,
+	Marshalls,
+	HomeGoods,
+	Sierra,
+	HomeSense
+}
