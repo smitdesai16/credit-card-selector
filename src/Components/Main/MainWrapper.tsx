@@ -8,7 +8,7 @@ export const MainWrapper = () => {
 	return (
 		<main>
 			<SearchBox search={search} setSearch={setSearch} />
-			<ResultTable />
+			<ResultTable search={search} />
 		</main>
 	)
 }

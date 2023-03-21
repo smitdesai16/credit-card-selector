@@ -2,8 +2,19 @@ import { Benefit } from "../../Model/Benefit";
 import { ICreditCardBenefit } from "../../Model/ICreditCardBenefit";
 import { getCreditCardBenefits } from "../../Utilities"
 
-export const ResultTable = () => {
-	const result: ICreditCardBenefit[] = getCreditCardBenefits();
+interface IProp {
+	search: string;
+}
+
+export const ResultTable = ({search}: IProp) => {
+	let result: ICreditCardBenefit[] = getCreditCardBenefits();
+
+	if(search) {
+		result = result.filter((value) => {
+			return Benefit[value.benefit].toLocaleLowerCase().indexOf(search.toLocaleLowerCase()) !== -1
+		} )
+	}
+
 	//filter based on search
 	return (
 		<div className="container">
