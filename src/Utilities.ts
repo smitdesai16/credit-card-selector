@@ -2,6 +2,7 @@ import { BankOfAmericaCreditCard, BankOfAmericaPreferredRewards } from "./DataLa
 import { CitiCreditCard } from "./DataLayer/CitiCreditCard";
 import { DiscoverCreditCard } from "./DataLayer/Discover";
 import { TJMaxCreditCard } from "./DataLayer/TJMaxCreditCard";
+import { Benefit } from "./Model/Benefit";
 import { ICreditCardBenefit } from "./Model/ICreditCardBenefit";
 
 export const getCreditCardBenefits = (): ICreditCardBenefit[] => {
@@ -31,6 +32,20 @@ export const getCreditCardBenefits = (): ICreditCardBenefit[] => {
 			dictionaryStorage.set(element.benefit, element);
 		}
 	});
+	
+	const otherBenefit: ICreditCardBenefit = dictionaryStorage.get(Benefit.Other);
+
+	for (const value in Object.keys(Benefit)) {
+		const key = Number(value);
+		if (typeof Benefit[key] !== "string") {
+			continue;
+		}
+	
+		if(!dictionaryStorage.has(key))
+		{
+			dictionaryStorage.set(key, { benefit: key, creditCard: otherBenefit.creditCard, percentage: otherBenefit.percentage });
+		}
+	}
 
 	let result: ICreditCardBenefit[] = [];
 
