@@ -42,6 +42,16 @@ export class BankOfAmericaCreditCard extends CreditCardBase {
 			{
 				creditCard: creditCard,
 				percentage: this.getPreferredRewardsBenefitPercentage(2),
+				benefit: Benefit.Krogger
+			},
+			{
+				creditCard: creditCard,
+				percentage: this.getPreferredRewardsBenefitPercentage(2),
+				benefit: Benefit.Walmart
+			},
+			{
+				creditCard: creditCard,
+				percentage: this.getPreferredRewardsBenefitPercentage(2),
 				benefit: Benefit.WholesaleClubs
 			},
 			{

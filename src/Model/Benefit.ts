@@ -15,5 +15,7 @@ export enum Benefit {
 	Marshalls,
 	HomeGoods,
 	Sierra,
-	HomeSense
+	HomeSense,
+	Krogger,
+	Walmart
 }
