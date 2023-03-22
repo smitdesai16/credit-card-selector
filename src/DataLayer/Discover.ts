@@ -45,6 +45,10 @@ export class DiscoverCreditCard extends CreditCardBase {
 					},{
 						creditCard: creditCard,
 						percentage: 5,
+						benefit: Benefit.Dining,
+					},{
+						creditCard: creditCard,
+						percentage: 5,
 						benefit: Benefit.WholesaleClubs,
 					}
 				])

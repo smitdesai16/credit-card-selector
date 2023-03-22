@@ -21,6 +21,11 @@ export class CitiCreditCard extends CreditCardBase {
 			{
 				creditCard: creditCard,
 				percentage: 3,
+				benefit: Benefit.Dining
+			},
+			{
+				creditCard: creditCard,
+				percentage: 3,
 				benefit: Benefit.Travel
 			},
 			{
