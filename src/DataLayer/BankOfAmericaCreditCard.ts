@@ -10,18 +10,31 @@ export enum BankOfAmericaPreferredRewards {
 	PlatinumPlus = 0.75
 }
 
+export enum BankOfAmerica3PercentBenefit {
+	Online,
+	Dining,
+	DrugStore,
+	Gas,
+	HomeImprovementAndFurniture,
+	Travel
+}
+
 export class BankOfAmericaCreditCard extends CreditCardBase {
 	
 	private readonly _preferredRewards: BankOfAmericaPreferredRewards;
+	private readonly _threePercentBenefit: BankOfAmerica3PercentBenefit;
+	private readonly _name: string;
 
-	constructor(preferredRewards: BankOfAmericaPreferredRewards) {
+	constructor(name: string, preferredRewards: BankOfAmericaPreferredRewards, threePercentBenefit: BankOfAmerica3PercentBenefit) {
 		super();
+		this._name = name;
 		this._preferredRewards = preferredRewards;
+		this._threePercentBenefit = threePercentBenefit;
 	}
 
 	getCreditCard(): ICreditCard {
 		return {
-			name: "Bank Of America",
+			name: this._name,
 			image: ""
 		}
 	}
@@ -32,7 +45,7 @@ export class BankOfAmericaCreditCard extends CreditCardBase {
 			{
 				creditCard: creditCard,
 				percentage: this.getPreferredRewardsBenefitPercentage(3),
-				benefit: Benefit.Online
+				benefit: this.getBenefit(this._threePercentBenefit)
 			},
 			{
 				creditCard: creditCard,
@@ -64,5 +77,27 @@ export class BankOfAmericaCreditCard extends CreditCardBase {
 
 	getPreferredRewardsBenefitPercentage(value: number): number {
 		return value + (this._preferredRewards * value)
+	}
+
+	getBenefit(value: BankOfAmerica3PercentBenefit): Benefit {
+		switch(value) {
+			case BankOfAmerica3PercentBenefit.Dining:
+				return Benefit.Dining;
+
+			case BankOfAmerica3PercentBenefit.DrugStore:
+				return Benefit.DrugStore;
+
+			case BankOfAmerica3PercentBenefit.Gas:
+				return Benefit.Gas;
+
+			case BankOfAmerica3PercentBenefit.HomeImprovementAndFurniture:
+				return Benefit.HomeImprovementAndFurniture;
+
+			case BankOfAmerica3PercentBenefit.Online:
+				return Benefit.Online;
+
+			case BankOfAmerica3PercentBenefit.Travel:
+				return Benefit.Travel;
+		}
 	}
 }
