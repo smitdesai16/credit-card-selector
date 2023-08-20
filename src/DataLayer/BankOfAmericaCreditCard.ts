@@ -41,12 +41,10 @@ export class BankOfAmericaCreditCard extends CreditCardBase {
 
 	getCreditCardBenefits(): ICreditCardBenefit[] {
 		const creditCard = this.getCreditCard();
-		return [
-			{
-				creditCard: creditCard,
-				percentage: this.getPreferredRewardsBenefitPercentage(3),
-				benefit: this.getBenefit(this._threePercentBenefit)
-			},
+
+		var threePercentBenefits = this.getBenefits(this._threePercentBenefit);
+
+		var result = [
 			{
 				creditCard: creditCard,
 				percentage: this.getPreferredRewardsBenefitPercentage(2),
@@ -73,31 +71,41 @@ export class BankOfAmericaCreditCard extends CreditCardBase {
 				benefit: Benefit.Other
 			}
 		];
+		
+		threePercentBenefits.map((value) => {
+			result.push({
+				creditCard: creditCard,
+				percentage: this.getPreferredRewardsBenefitPercentage(3),
+				benefit: value
+			})
+		})
+		
+		return result;
 	}
 
 	getPreferredRewardsBenefitPercentage(value: number): number {
 		return value + (this._preferredRewards * value)
 	}
 
-	getBenefit(value: BankOfAmerica3PercentBenefit): Benefit {
+	getBenefits(value: BankOfAmerica3PercentBenefit): Array<Benefit> {
 		switch(value) {
 			case BankOfAmerica3PercentBenefit.Dining:
-				return Benefit.Dining;
+				return [Benefit.Dining, Benefit.Restaurants];
 
 			case BankOfAmerica3PercentBenefit.DrugStore:
-				return Benefit.DrugStore;
+				return [Benefit.DrugStore];
 
 			case BankOfAmerica3PercentBenefit.Gas:
-				return Benefit.Gas;
+				return [Benefit.Gas];
 
 			case BankOfAmerica3PercentBenefit.HomeImprovementAndFurniture:
-				return Benefit.HomeImprovementAndFurniture;
+				return [Benefit.HomeImprovementAndFurniture];
 
 			case BankOfAmerica3PercentBenefit.Online:
-				return Benefit.Online;
+				return [Benefit.Online];
 
 			case BankOfAmerica3PercentBenefit.Travel:
-				return Benefit.Travel;
+				return [Benefit.Travel];
 		}
 	}
 }
