@@ -77,6 +77,17 @@ export class DiscoverCreditCard extends CreditCardBase {
 			case 9:
 			case 10:
 			case 11:
+				result = result.concat([
+					{
+						creditCard: creditCard,
+						percentage: 5,
+						benefit: Benefit.Amazon,
+					},{
+						creditCard: creditCard,
+						percentage: 5,
+						benefit: Benefit.Target,
+					}
+				])
 				break;
 		}
 

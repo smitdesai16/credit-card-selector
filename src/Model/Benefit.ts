@@ -17,5 +17,7 @@ export enum Benefit {
 	Sierra,
 	HomeSense,
 	Krogger,
-	Walmart
+	Walmart,
+	Amazon,
+	Target
 }

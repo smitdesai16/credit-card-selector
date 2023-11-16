@@ -1,5 +1,4 @@
 import { BankOfAmericaCreditCard, BankOfAmericaPreferredRewards, BankOfAmerica3PercentBenefit } from "./DataLayer/BankOfAmericaCreditCard";
-import { CitiCreditCard } from "./DataLayer/CitiCreditCard";
 import { DiscoverCreditCard } from "./DataLayer/Discover";
 import { TJMaxCreditCard } from "./DataLayer/TJMaxCreditCard";
 import { Benefit } from "./Model/Benefit";
@@ -10,14 +9,14 @@ export const getCreditCardBenefits = (): ICreditCardBenefit[] => {
 	const boa1 = new BankOfAmericaCreditCard("BOA Smit Online", BankOfAmericaPreferredRewards.Platinum, BankOfAmerica3PercentBenefit.Online);
 	const boa2 = new BankOfAmericaCreditCard("BOA Smit Travel", BankOfAmericaPreferredRewards.Platinum, BankOfAmerica3PercentBenefit.Travel);
 	const boa3 = new BankOfAmericaCreditCard("BOA Madhura Dining", BankOfAmericaPreferredRewards.Gold, BankOfAmerica3PercentBenefit.Dining);
-	const citi = new CitiCreditCard();
+	const boa4 = new BankOfAmericaCreditCard("BOA Madhura Gas", BankOfAmericaPreferredRewards.Gold, BankOfAmerica3PercentBenefit.Gas);
 	const discover = new DiscoverCreditCard();
 	const tjMax = new TJMaxCreditCard();
 	
 	creditCards = creditCards.concat(boa1.getCreditCardBenefits());
 	creditCards = creditCards.concat(boa2.getCreditCardBenefits());
 	creditCards = creditCards.concat(boa3.getCreditCardBenefits());
-	// creditCards = creditCards.concat(citi.getCreditCardBenefits());
+	creditCards = creditCards.concat(boa4.getCreditCardBenefits());
 	creditCards = creditCards.concat(discover.getCreditCardBenefits());
 	creditCards = creditCards.concat(tjMax.getCreditCardBenefits());
 	
