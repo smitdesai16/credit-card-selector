@@ -21,23 +21,11 @@ export class DiscoverCreditCard extends CreditCardBase {
 					{
 						creditCard: creditCard,
 						percentage: 5,
-						benefit: Benefit.GroceryStore,
-					},{
-						creditCard: creditCard,
-						percentage: 5,
-						benefit: Benefit.Krogger,
-					},{
-						creditCard: creditCard,
-						percentage: 5,
-						benefit: Benefit.Walmart,
+						benefit: Benefit.Restaurants,
 					},{
 						creditCard: creditCard,
 						percentage: 5,
 						benefit: Benefit.DrugStore,
-					},{
-						creditCard: creditCard,
-						percentage: 5,
-						benefit: Benefit.StreamingServices,
 					}
 				])
 				break;
@@ -45,33 +33,11 @@ export class DiscoverCreditCard extends CreditCardBase {
 			case 3:
 			case 4:
 			case 5:
-				result = result.concat([
-					{
-						creditCard: creditCard,
-						percentage: 5,
-						benefit: Benefit.Restaurants,
-					},{
-						creditCard: creditCard,
-						percentage: 5,
-						benefit: Benefit.Dining,
-					},{
-						creditCard: creditCard,
-						percentage: 5,
-						benefit: Benefit.WholesaleClubs,
-					}
-				])
 				break;
 
 			case 6:
 			case 7:
 			case 8:
-				result = result.concat([
-					{
-						creditCard: creditCard,
-						percentage: 5,
-						benefit: Benefit.Gas,
-					}
-				])
 				break;
 
 			case 9:

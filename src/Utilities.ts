@@ -8,7 +8,7 @@ export const getCreditCardBenefits = (): ICreditCardBenefit[] => {
 	let creditCards: ICreditCardBenefit[] = [];
 	const boa1 = new BankOfAmericaCreditCard("BOA Smit Online", BankOfAmericaPreferredRewards.Platinum, BankOfAmerica3PercentBenefit.Online);
 	const boa2 = new BankOfAmericaCreditCard("BOA Smit Travel", BankOfAmericaPreferredRewards.Platinum, BankOfAmerica3PercentBenefit.Travel);
-	const boa3 = new BankOfAmericaCreditCard("BOA Madhura Dining", BankOfAmericaPreferredRewards.Gold, BankOfAmerica3PercentBenefit.Dining);
+	const boa3 = new BankOfAmericaCreditCard("BOA Madhura Dining", BankOfAmericaPreferredRewards.Platinum, BankOfAmerica3PercentBenefit.Dining);
 	const boa4 = new BankOfAmericaCreditCard("BOA Smit Gas", BankOfAmericaPreferredRewards.Platinum, BankOfAmerica3PercentBenefit.Gas);
 	const discover = new DiscoverCreditCard();
 	const tjMax = new TJMaxCreditCard();
